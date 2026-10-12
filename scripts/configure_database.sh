@@ -31,14 +31,11 @@ done
 # shell or passed through the command line.
 sudo docker compose exec -T \
     -e "PIPELINE_USER=$POSTGRES_PIPELINE_USER" \
+    -e "PIPELINE_PASSWORD=$POSTGRES_PIPELINE_PASSWORD" \
     database \
     bash -s <<'BASH'
 
 set -Eeuo pipefail
-
-PIPELINE_PASSWORD="$(< /run/secrets/postgres_pipeline_password)"
-
-export PIPELINE_PASSWORD
 
 psql \
     -U "$POSTGRES_USER" \

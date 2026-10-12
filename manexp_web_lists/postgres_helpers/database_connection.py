@@ -1,5 +1,4 @@
 import os
-from pathlib import Path
 
 from dotenv import load_dotenv
 from psycopg import Connection, connect
@@ -14,12 +13,11 @@ def psycopg_connection() -> Connection:
     Returns:
         Connection: A psycopg connection object.
     """
-    password = Path("/run/secrets/postgres_pipeline_password").read_text().strip()
 
     return connect(
         host="database",
         port=5432,
         dbname=os.environ["POSTGRES_DB"],
-        user=os.environ["POSTGRES_USER"],
-        password=password,
+        user=os.environ["POSTGRES_PIPELINE_USER"],
+        password=os.environ["POSTGRES_PIPELINE_PASSWORD"],
     )

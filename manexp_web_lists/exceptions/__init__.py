@@ -1,6 +1,5 @@
 from .code_mismatch import CodeMismatchError
 from .invalid_chemical import InvalidChemicalError
-from .invalid_environment import InvalidEnvironmentError
 from .invalid_pseudo_boolean import InvalidPseudoBoolError
 from .invalid_xml import InvalidXMLError
 from .language_installation_failed import LanguageInstallationFailedError
@@ -17,7 +16,6 @@ from .unsupported_type import UnsupportedTypeError
 __all__ = [
     "CodeMismatchError",
     "InvalidChemicalError",
-    "InvalidEnvironmentError",
     "InvalidPseudoBoolError",
     "InvalidXMLError",
     "LanguageInstallationFailedError",

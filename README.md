@@ -45,7 +45,7 @@ Source dataset:
 
 The datasets are available as a PostgreSQL database. To get your own dataset version on your host, follow these few steps:
 
-### 1. Make sure to have docker installed and populate .env and secrets according to your needs
+### 1. Make sure to have docker installed and populate .env according to your needs
 
 Check that docker is installed. It should return something like: Docker version xx.x.x, build xxxx. If this is not the case, install it.
 
@@ -57,28 +57,9 @@ Copy the .env.example file and rename it to .env. Use vim or any other text edit
 ```bash
 cp .env.example .env
 
+chmod 600 .env # make .env available only for you
+
 vim .env
-```
-
-Create secret files
-```bash
-touch \
-    secrets/postgres_admin_password.txt \
-    secrets/postgres_pipeline_password.txt \
-    secrets/email_password.txt
-
-chmod 600 \
-    secrets/postgres_admin_password.txt \
-    secrets/postgres_pipeline_password.txt \
-    secrets/email_password.txt
-```
-
-Use vim or any other text editor to edit secrets
-
-```bash
-vim secrets/postgres_admin_password.txt
-vim secrets/postgres_pipeline_password.txt
-vim secrets/email_password.txt
 ```
 
 ### 2. Create and configure the database

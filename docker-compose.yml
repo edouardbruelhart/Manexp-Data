@@ -10,11 +10,7 @@ services:
     environment:
       POSTGRES_USER: "${POSTGRES_ADMIN_USER}"
       POSTGRES_DB: "${POSTGRES_DB}"
-      POSTGRES_PASSWORD_FILE: /run/secrets/postgres_admin_password
-
-    secrets:
-      - postgres_admin_password
-      - postgres_pipeline_password
+      POSTGRES_PASSWORD: "${POSTGRES_ADMIN_PASSWORD}"
 
     ports:
       - "127.0.0.1:${POSTGRES_PORT}:5432"
@@ -50,14 +46,12 @@ services:
 
     environment:
       POSTGRES_DB: "${POSTGRES_DB}"
-      POSTGRES_USER: "${POSTGRES_PIPELINE_USER}"
+      POSTGRES_PIPELINE_USER: "${POSTGRES_PIPELINE_USER}"
+      POSTGRES_PIPELINE_PASSWORD: "${POSTGRES_PIPELINE_PASSWORD}"
       EMAIL_SENDER: "${EMAIL_SENDER}"
+      EMAIL_SENDER_PASSWORD: "${EMAIL_SENDER_PASSWORD}"
       SMTP: "${SMTP}"
       EMAIL_RECEIVER: "${EMAIL_RECEIVER}"
-
-    secrets:
-      - postgres_pipeline_password
-      - email_password
 
     depends_on:
       database:
@@ -69,18 +63,6 @@ services:
 
 volumes:
   postgres_data:
-
-secrets:
-
-  postgres_admin_password:
-    file: ./secrets/postgres_admin_password.txt
-
-  postgres_pipeline_password:
-    file: ./secrets/postgres_pipeline_password.txt
-
-  email_password:
-    file: ./secrets/email_password.txt
-
 
 networks:
 

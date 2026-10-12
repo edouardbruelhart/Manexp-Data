@@ -5,13 +5,10 @@ from manexp_web_lists.postgres_helpers.database_connection import psycopg_connec
 
 def test_psycopg_connection(monkeypatch):
     monkeypatch.setenv("POSTGRES_DB", "test-db")
-    monkeypatch.setenv("POSTGRES_USER", "test-user")
+    monkeypatch.setenv("POSTGRES_PIPELINE_USER", "test-user")
+    monkeypatch.setenv("POSTGRES_PIPELINE_PASSWORD", "test-password")
 
     with (
-        patch(
-            "manexp_web_lists.postgres_helpers.database_connection.Path.read_text",
-            return_value="test-password\n",
-        ),
         patch("manexp_web_lists.postgres_helpers.database_connection.connect") as mock_connect,
     ):
         psycopg_connection()
