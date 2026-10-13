@@ -803,34 +803,6 @@
   
   
     <li class="md-nav__item">
-      <a href="manexp_web_lists/exceptions/invalid_environment/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Invalid environment
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="manexp_web_lists/exceptions/invalid_pseudo_boolean/" class="md-nav__link">
         
   
@@ -2678,10 +2650,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-make-sure-to-have-docker-installed-and-populate-env-and-secrets-according-to-your-needs" class="md-nav__link">
+  <a href="#1-make-sure-to-have-docker-installed-and-populate-env-according-to-your-needs" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. Make sure to have docker installed and populate .env and secrets according to your needs
+        1. Make sure to have docker installed and populate .env according to your needs
       
     </span>
   </a>
@@ -2715,6 +2687,17 @@
     <span class="md-ellipsis">
       
         4. Access database
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-remove-the-database-and-stop-the-containers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Remove the database and stop the containers
       
     </span>
   </a>
@@ -2810,31 +2793,17 @@
 </code></pre></div>
 <h2 id="getting-data">Getting data</h2>
 <p>The datasets are available as a PostgreSQL database. To get your own dataset version on your host, follow these few steps:</p>
-<h3 id="1-make-sure-to-have-docker-installed-and-populate-env-and-secrets-according-to-your-needs">1. Make sure to have docker installed and populate .env and secrets according to your needs</h3>
+<h3 id="1-make-sure-to-have-docker-installed-and-populate-env-according-to-your-needs">1. Make sure to have docker installed and populate .env according to your needs</h3>
 <p>Check that docker is installed. It should return something like: Docker version xx.x.x, build xxxx. If this is not the case, install it.</p>
 <div class="language-bash highlight"><pre><span></span><code>docker<span class="w"> </span>--version
 </code></pre></div>
 <p>Copy the .env.example file and rename it to .env. Use vim or any other text editor to edit it
 <div class="language-bash highlight"><pre><span></span><code>cp<span class="w"> </span>.env.example<span class="w"> </span>.env
 
+chmod<span class="w"> </span><span class="m">600</span><span class="w"> </span>.env<span class="w"> </span><span class="c1"># make .env available only for you</span>
+
 vim<span class="w"> </span>.env
 </code></pre></div></p>
-<p>Create secret files
-<div class="language-bash highlight"><pre><span></span><code>touch<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>secrets/postgres_admin_password.txt<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>secrets/postgres_pipeline_password.txt<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>secrets/email_password.txt
-
-chmod<span class="w"> </span><span class="m">600</span><span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>secrets/postgres_admin_password.txt<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>secrets/postgres_pipeline_password.txt<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>secrets/email_password.txt
-</code></pre></div></p>
-<p>Use vim or any other text editor to edit secrets</p>
-<div class="language-bash highlight"><pre><span></span><code>vim<span class="w"> </span>secrets/postgres_admin_password.txt
-vim<span class="w"> </span>secrets/postgres_pipeline_password.txt
-vim<span class="w"> </span>secrets/email_password.txt
-</code></pre></div>
 <h3 id="2-create-and-configure-the-database">2. Create and configure the database</h3>
 <p>Run this command once in the root directory of the repository:</p>
 <div class="language-bash highlight"><pre><span></span><code>./scripts/configure_database.sh
@@ -2845,6 +2814,11 @@ vim<span class="w"> </span>secrets/email_password.txt
 </code></pre></div>
 <h3 id="4-access-database">4. Access database</h3>
 <p>You can access the database using any PostgreSQL client or tool of your choice. The docker-compose.yaml file is configured to expose database only on your own host (127.0.0.1:<POSTGRES_PORT>). Feel free to modify the configuration to connect to a different host or port if needed.</p>
+<h3 id="5-remove-the-database-and-stop-the-containers">5. Remove the database and stop the containers</h3>
+<p>To remove the database and stop the containers, run this command in the root directory:</p>
+<p>Be careful, it will erase all, including the database and all the data stored in it.</p>
+<div class="language-bash highlight"><pre><span></span><code>docker<span class="w"> </span>compose<span class="w"> </span>down<span class="w"> </span>--volumes<span class="w"> </span>--remove-orphans
+</code></pre></div>
 <h2 id="contributing"><a href="https://github.com/edouardbruelhart/Manexp-Web-Lists/blob/main/CONTRIBUTING.md">Contributing</a></h2>
 <p>Contributions are welcome, and they are greatly appreciated!</p>
 <h2 id="data-sources"><a href="https://github.com/edouardbruelhart/Manexp-Web-Lists/blob/main/DATA_SOURCES.md">Data sources</a></h2>
