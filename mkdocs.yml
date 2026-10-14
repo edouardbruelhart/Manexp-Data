@@ -72,7 +72,89 @@ theme:
   icon:
     repo: fontawesome/brands/github
 
-nav: []
+nav:
+- Run: manexp_data/run.md
+- Clients:
+  - Gbif client: manexp_data/clients/gbif_client.md
+  - Translation client: manexp_data/clients/translation_client.md
+- Core:
+  - Logging config: manexp_data/core/logging_config.md
+  - Mailer: manexp_data/core/mailer.md
+  - Parsers: manexp_data/core/parsers.md
+  - Strict model: manexp_data/core/strict_model.md
+- Exceptions:
+  - Code mismatch: manexp_data/exceptions/code_mismatch.md
+  - Invalid chemical: manexp_data/exceptions/invalid_chemical.md
+  - Invalid pseudo boolean: manexp_data/exceptions/invalid_pseudo_boolean.md
+  - Invalid xml: manexp_data/exceptions/invalid_xml.md
+  - Language installation failed:
+      manexp_data/exceptions/language_installation_failed.md
+  - No pk detected: manexp_data/exceptions/no_pk_detected.md
+  - Postgresql configuration failed:
+      manexp_data/exceptions/postgresql_configuration_failed.md
+  - Separator error: manexp_data/exceptions/separator_error.md
+  - Unexpected xml child: manexp_data/exceptions/unexpected_xml_child.md
+  - Unexpected xml element: manexp_data/exceptions/unexpected_xml_element.md
+  - Unexpected xml language: manexp_data/exceptions/unexpected_xml_language.md
+  - Unresolved foreign key: manexp_data/exceptions/unresolved_foreign_key.md
+  - Unsupported os: manexp_data/exceptions/unsupported_os.md
+  - Unsupported type: manexp_data/exceptions/unsupported_type.md
+- Phytosanitary products:
+  - Get phytosanitary products:
+      manexp_data/phytosanitary_products/get_phytosanitary_products.md
+  - Extract:
+    - Download phytosanitary products:
+        manexp_data/phytosanitary_products/extract/download_phytosanitary_products.md
+    - Extract indications:
+        manexp_data/phytosanitary_products/extract/extract_indications.md
+  - Load:
+    - Load phytosanitary products:
+        manexp_data/phytosanitary_products/load/load_phytosanitary_products.md
+  - Transform:
+    - Clean indications:
+        manexp_data/phytosanitary_products/transform/clean_indications.md
+    - Clean metadata:
+        manexp_data/phytosanitary_products/transform/clean_metadata.md
+    - Clean products:
+        manexp_data/phytosanitary_products/transform/clean_products.md
+    - Merge phyto: manexp_data/phytosanitary_products/transform/merge_phyto.md
+    - Parsers: manexp_data/phytosanitary_products/transform/parsers.md
+- Postgres helpers:
+  - Apply schema: manexp_data/postgres_helpers/apply_schema.md
+  - Database connection: manexp_data/postgres_helpers/database_connection.md
+  - Generate create tables:
+      manexp_data/postgres_helpers/generate_create_tables.md
+  - Generate foreign key constraints:
+      manexp_data/postgres_helpers/generate_foreign_key_constraints.md
+  - Generate schema: manexp_data/postgres_helpers/generate_schema.md
+  - Synchronize: manexp_data/postgres_helpers/synchronize.md
+- Seeds:
+  - Get seeds: manexp_data/seeds/get_seeds.md
+  - Extract:
+    - Create countries: manexp_data/seeds/extract/create_countries.md
+    - Create register subtypes:
+        manexp_data/seeds/extract/create_register_subtypes.md
+    - Create register types: manexp_data/seeds/extract/create_register_types.md
+    - Download plant varieties:
+        manexp_data/seeds/extract/download_plant_varieties.md
+    - Download taxonomy: manexp_data/seeds/extract/download_taxonomy.md
+  - Load:
+    - Load seeds: manexp_data/seeds/load/load_seeds.md
+  - Transform:
+    - Booleanize plant varieties:
+        manexp_data/seeds/transform/booleanize_plant_varieties.md
+    - Clean plant varieties denominations:
+        manexp_data/seeds/transform/clean_plant_varieties_denominations.md
+    - Clean taxonomy: manexp_data/seeds/transform/clean_taxonomy.md
+    - Color taxonomy: manexp_data/seeds/transform/color_taxonomy.md
+    - Filter plant varieties:
+        manexp_data/seeds/transform/filter_plant_varieties.md
+    - Filter taxonomy: manexp_data/seeds/transform/filter_taxonomy.md
+    - Iconize taxonomy: manexp_data/seeds/transform/iconize_taxonomy.md
+    - Merge taxonomy: manexp_data/seeds/transform/merge_taxonomy.md
+    - Replace plant varieties relations:
+        manexp_data/seeds/transform/replace_plant_varieties_relations.md
+    - Translate countries: manexp_data/seeds/transform/translate_countries.md
 extra:
   social:
   - icon: fontawesome/brands/github
