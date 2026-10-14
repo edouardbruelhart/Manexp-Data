@@ -13,18 +13,6 @@ env:
 
 jobs:
 
-  deploy-docs:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Check out
-        uses: actions/checkout@v4
-
-      - name: Set up the environment
-        uses: ./.github/actions/setup-python-env
-
-      - name: Deploy documentation
-        run: uv run mkdocs gh-deploy --force
-
   build-and-push-image:
     runs-on: ubuntu-latest
     steps:
@@ -47,4 +35,4 @@ jobs:
           context: .
           push: true
           tags: |
-            ${{ env.REGISTRY }}/manexp-data:${{ github.event.release.tag_name }}
+            ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ github.event.release.tag_name }}
