@@ -75,7 +75,7 @@ Run this command once in the root directory of the repository:
 Run this command in the root directory of the repository when you want to update the database:
 
 ```bash
-./scripts/ingest_data.sh
+docker compose run --rm --build pipeline
 ```
 
 ### 4. Access database

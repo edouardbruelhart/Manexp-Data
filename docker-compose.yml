@@ -1,7 +1,9 @@
 services:
 
   database:
+
     image: postgres:18
+
     restart: unless-stopped
 
     volumes:
@@ -36,13 +38,10 @@ services:
         max-file: "3"
 
   pipeline:
-    build:
-      context: .
-      dockerfile: Dockerfile
+
+    image: ghcr.io/MANEXP/manexp-data:latest
 
     restart: no
-
-    working_dir: /app
 
     environment:
       POSTGRES_DB: "${POSTGRES_DB}"
@@ -62,6 +61,7 @@ services:
       - outbound
 
 volumes:
+
   postgres_data:
 
 networks:
