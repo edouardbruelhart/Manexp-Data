@@ -47,4 +47,4 @@ jobs:
           context: .
           push: true
           tags: |
-            ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ github.event.release.tag_name }}
+            ${{ env.REGISTRY }}/manexp-data:${{ github.event.release.tag_name }}
