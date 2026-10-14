@@ -1,15 +1,15 @@
-# Manexp-Web-Lists
+# Manexp-Data
 
-[![Build status](https://img.shields.io/github/actions/workflow/status/edouardbruelhart/Manexp-Web-Lists/main.yml?branch=main)](https://github.com/edouardbruelhart/Manexp-Web-Lists/actions/workflows/main.yml?query=branch%3Amain)
-[![codecov](https://codecov.io/gh/edouardbruelhart/Manexp-Web-Lists/branch/main/graph/badge.svg)](https://codecov.io/gh/edouardbruelhart/Manexp-Web-Lists)
-[![Commit activity](https://img.shields.io/github/commit-activity/m/edouardbruelhart/Manexp-Web-Lists)](https://img.shields.io/github/commit-activity/m/edouardbruelhart/Manexp-Web-Lists)
-[![License](https://img.shields.io/github/license/edouardbruelhart/Manexp-Web-Lists)](https://img.shields.io/github/license/edouardbruelhart/Manexp-Web-Lists)
+[![Build status](https://img.shields.io/github/actions/workflow/status/edouardbruelhart/Manexp-Data/main.yml?branch=main)](https://github.com/edouardbruelhart/Manexp-Data/actions/workflows/main.yml?query=branch%3Amain)
+[![codecov](https://codecov.io/gh/edouardbruelhart/Manexp-Data/branch/main/graph/badge.svg)](https://codecov.io/gh/edouardbruelhart/Manexp-Data)
+[![Commit activity](https://img.shields.io/github/commit-activity/m/edouardbruelhart/Manexp-Data)](https://img.shields.io/github/commit-activity/m/edouardbruelhart/Manexp-Data)
+[![License](https://img.shields.io/github/license/edouardbruelhart/Manexp-Data)](https://img.shields.io/github/license/edouardbruelhart/Manexp-Data)
 
 This repository aggregates and transforms data originating from multiple third-party sources, including public institutions and open data platforms for Manexp-Web project.
 
-**Github repository**: <https://github.com/edouardbruelhart/Manexp-Web-Lists/>
+**Github repository**: <https://github.com/edouardbruelhart/Manexp-Data/>
 
-**Documentation** <https://edouardbruelhart.github.io/Manexp-Web-Lists/>
+**Documentation** <https://edouardbruelhart.github.io/Manexp-Data/>
 
 ## Available datasets:
 
@@ -92,10 +92,10 @@ Be careful, it will erase all, including the database and all the data stored in
 docker compose down --volumes --remove-orphans
 ```
 
-## [Contributing](https://github.com/edouardbruelhart/Manexp-Web-Lists/blob/main/CONTRIBUTING.md)
+## [Contributing](https://github.com/edouardbruelhart/Manexp-Data/blob/main/CONTRIBUTING.md)
 
 Contributions are welcome, and they are greatly appreciated!
 
-## [Data sources](https://github.com/edouardbruelhart/Manexp-Web-Lists/blob/main/DATA_SOURCES.md)
+## [Data sources](https://github.com/edouardbruelhart/Manexp-Data/blob/main/DATA_SOURCES.md)
 
 This project depends on external datasets from third-party sources, including public institutions and open data platforms.   All sources, attribution details, and transformation notes are documented in **DATA_SOURCES.md**.

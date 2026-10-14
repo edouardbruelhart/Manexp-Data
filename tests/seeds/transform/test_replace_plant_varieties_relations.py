@@ -1,6 +1,6 @@
 import polars as pl
 
-from manexp_web_lists.seeds.transform.replace_plant_varieties_relations import (
+from manexp_data.seeds.transform.replace_plant_varieties_relations import (
     replace_plant_varieties_relations,
 )
 

@@ -1,7 +1,7 @@
 import polars as pl
 from polars.testing import assert_frame_equal
 
-from manexp_web_lists.seeds.transform.clean_plant_varieties_denominations import (
+from manexp_data.seeds.transform.clean_plant_varieties_denominations import (
     aggregate_denominations,
     clean_plant_varieties_denominations,
 )

@@ -1,4 +1,4 @@
-from manexp_web_lists.exceptions import UnsupportedOSError
+from manexp_data.exceptions import UnsupportedOSError
 
 
 def test_unsupported_os_error() -> None:

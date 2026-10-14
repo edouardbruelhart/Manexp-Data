@@ -8,13 +8,13 @@ import pytest
 from defusedxml.ElementTree import fromstring
 from polars.testing import assert_frame_equal
 
-from manexp_web_lists.exceptions import (
+from manexp_data.exceptions import (
     CodeMismatchError,
     InvalidXMLError,
     UnexpectedXMLChildError,
     UnexpectedXMLLanguageError,
 )
-from manexp_web_lists.phytosanitary_products.transform.parsers import (
+from manexp_data.phytosanitary_products.transform.parsers import (
     _parse_description,
     _parse_detail,
     indications_parser,
@@ -54,7 +54,7 @@ def test_parse_xml_root_raises_if_no_root() -> None:
     mock_tree.getroot.return_value = None
 
     with (
-        patch("manexp_web_lists.phytosanitary_products.transform.parsers.parse", return_value=mock_tree),
+        patch("manexp_data.phytosanitary_products.transform.parsers.parse", return_value=mock_tree),
         pytest.raises(InvalidXMLError),
     ):
         parse_xml_root(Path("dummy.xml"))
@@ -200,9 +200,7 @@ def test_parse_detail_with_description():
         """
     )
 
-    with patch(
-        "manexp_web_lists.phytosanitary_products.transform.parsers._parse_description"
-    ) as mock_parse_description:
+    with patch("manexp_data.phytosanitary_products.transform.parsers._parse_description") as mock_parse_description:
         _parse_detail(detail)
 
     mock_parse_description.assert_called_once_with(

@@ -3,7 +3,7 @@ from xml.etree import ElementTree as ET
 
 from defusedxml.ElementTree import fromstring, parse
 
-from manexp_web_lists.phytosanitary_products.transform.merge_phyto import merge_phyto, normalize_product, read_phyto
+from manexp_data.phytosanitary_products.transform.merge_phyto import merge_phyto, normalize_product, read_phyto
 
 
 def test_merge_phyto(tmp_path: Path) -> None:

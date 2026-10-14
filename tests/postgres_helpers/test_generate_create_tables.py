@@ -6,8 +6,8 @@ import pyarrow as pa
 import pyarrow.parquet as pq
 import pytest
 
-from manexp_web_lists.exceptions import NoPKDetectedError, UnsupportedTypeError
-from manexp_web_lists.postgres_helpers.generate_create_tables import (
+from manexp_data.exceptions import NoPKDetectedError, UnsupportedTypeError
+from manexp_data.postgres_helpers.generate_create_tables import (
     contain_null,
     generate_create_tables,
     is_association_table,
@@ -219,7 +219,7 @@ def test_postgres_type(arrow_type, expected):
     field = pa.field("column", arrow_type)
 
     with patch(
-        "manexp_web_lists.postgres_helpers.generate_create_tables.is_uuid_column",
+        "manexp_data.postgres_helpers.generate_create_tables.is_uuid_column",
         return_value=False,
     ):
         result = postgres_type(Path("products.parquet"), field)
@@ -244,7 +244,7 @@ def test_postgres_type_unsupported(arrow_type):
 
     with (
         patch(
-            "manexp_web_lists.postgres_helpers.generate_create_tables.is_uuid_column",
+            "manexp_data.postgres_helpers.generate_create_tables.is_uuid_column",
             return_value=False,
         ),
         pytest.raises(UnsupportedTypeError),
@@ -256,7 +256,7 @@ def test_postgres_type_uuid():
     field = pa.field("id", pa.string())
 
     with patch(
-        "manexp_web_lists.postgres_helpers.generate_create_tables.is_uuid_column",
+        "manexp_data.postgres_helpers.generate_create_tables.is_uuid_column",
         return_value=True,
     ):
         assert postgres_type(Path("products.parquet"), field) == "UUID"

@@ -1,6 +1,6 @@
 from unittest.mock import MagicMock, patch
 
-from manexp_web_lists.core.mailer import Mailer
+from manexp_data.core.mailer import Mailer
 
 
 def test_send_email_calls_smtp_ssl_correctly(monkeypatch):
@@ -14,7 +14,7 @@ def test_send_email_calls_smtp_ssl_correctly(monkeypatch):
 
     # Patch SMTP_SSL
     with (
-        patch("manexp_web_lists.core.mailer.smtplib.SMTP_SSL") as mock_smtp,
+        patch("manexp_data.core.mailer.smtplib.SMTP_SSL") as mock_smtp,
     ):
         mock_server = MagicMock()
         mock_smtp.return_value.__enter__.return_value = mock_server

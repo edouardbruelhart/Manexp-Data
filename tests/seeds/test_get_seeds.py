@@ -1,6 +1,6 @@
 from unittest.mock import MagicMock, patch
 
-from manexp_web_lists.seeds.get_seeds import get_seeds
+from manexp_data.seeds.get_seeds import get_seeds
 
 
 def test_get_seeds(tmp_path) -> None:
@@ -9,29 +9,25 @@ def test_get_seeds(tmp_path) -> None:
     (tmp_path / "old_file.parquet").touch()
 
     with (
-        patch("manexp_web_lists.seeds.get_seeds.FILES_PATH", tmp_path),
-        patch("manexp_web_lists.seeds.get_seeds.create_countries") as create_countries,
-        patch("manexp_web_lists.seeds.get_seeds.translate_countries") as translate_countries,
-        patch("manexp_web_lists.seeds.get_seeds.create_register_types") as create_register_types,
-        patch("manexp_web_lists.seeds.get_seeds.create_register_subtypes") as create_register_subtypes,
-        patch("manexp_web_lists.seeds.get_seeds.download_plant_varieties") as download_plant_varieties,
-        patch("manexp_web_lists.seeds.get_seeds.filter_plant_varieties") as filter_plant_varieties,
-        patch("manexp_web_lists.seeds.get_seeds.booleanize_plant_varieties") as booleanize_plant_varieties,
-        patch(
-            "manexp_web_lists.seeds.get_seeds.clean_plant_varieties_denominations"
-        ) as clean_plant_varieties_denominations,
-        patch(
-            "manexp_web_lists.seeds.get_seeds.replace_plant_varieties_relations"
-        ) as replace_plant_varieties_relations,
-        patch("manexp_web_lists.seeds.get_seeds.download_taxonomy") as download_taxonomy,
-        patch("manexp_web_lists.seeds.get_seeds.merge_taxonomy") as merge_taxonomy,
-        patch("manexp_web_lists.seeds.get_seeds.filter_taxonomy") as filter_taxonomy,
-        patch("manexp_web_lists.seeds.get_seeds.clean_taxonomy") as clean_taxonomy,
-        patch("manexp_web_lists.seeds.get_seeds.iconize_taxonomy") as iconize_taxonomy,
-        patch("manexp_web_lists.seeds.get_seeds.color_taxonomy") as color_taxonomy,
-        patch("manexp_web_lists.seeds.get_seeds.load_seeds") as load_seeds,
-        patch("manexp_web_lists.seeds.get_seeds.pl.read_csv") as read_csv,
-        patch("manexp_web_lists.seeds.get_seeds.pl.read_parquet") as read_parquet,
+        patch("manexp_data.seeds.get_seeds.FILES_PATH", tmp_path),
+        patch("manexp_data.seeds.get_seeds.create_countries") as create_countries,
+        patch("manexp_data.seeds.get_seeds.translate_countries") as translate_countries,
+        patch("manexp_data.seeds.get_seeds.create_register_types") as create_register_types,
+        patch("manexp_data.seeds.get_seeds.create_register_subtypes") as create_register_subtypes,
+        patch("manexp_data.seeds.get_seeds.download_plant_varieties") as download_plant_varieties,
+        patch("manexp_data.seeds.get_seeds.filter_plant_varieties") as filter_plant_varieties,
+        patch("manexp_data.seeds.get_seeds.booleanize_plant_varieties") as booleanize_plant_varieties,
+        patch("manexp_data.seeds.get_seeds.clean_plant_varieties_denominations") as clean_plant_varieties_denominations,
+        patch("manexp_data.seeds.get_seeds.replace_plant_varieties_relations") as replace_plant_varieties_relations,
+        patch("manexp_data.seeds.get_seeds.download_taxonomy") as download_taxonomy,
+        patch("manexp_data.seeds.get_seeds.merge_taxonomy") as merge_taxonomy,
+        patch("manexp_data.seeds.get_seeds.filter_taxonomy") as filter_taxonomy,
+        patch("manexp_data.seeds.get_seeds.clean_taxonomy") as clean_taxonomy,
+        patch("manexp_data.seeds.get_seeds.iconize_taxonomy") as iconize_taxonomy,
+        patch("manexp_data.seeds.get_seeds.color_taxonomy") as color_taxonomy,
+        patch("manexp_data.seeds.get_seeds.load_seeds") as load_seeds,
+        patch("manexp_data.seeds.get_seeds.pl.read_csv") as read_csv,
+        patch("manexp_data.seeds.get_seeds.pl.read_parquet") as read_parquet,
     ):
         # Input data
         countries = MagicMock(name="countries")

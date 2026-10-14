@@ -4,7 +4,7 @@ from unittest.mock import patch
 import polars as pl
 from polars.testing import assert_frame_equal
 
-from manexp_web_lists.phytosanitary_products.transform.clean_metadata import (
+from manexp_data.phytosanitary_products.transform.clean_metadata import (
     METADATA_TO_CLEAN,
     clean_metadata,
 )
@@ -36,11 +36,11 @@ def test_clean_metadata(tmp_path: Path) -> None:
 
     with (
         patch(
-            "manexp_web_lists.phytosanitary_products.transform.clean_metadata.metadata_parser",
+            "manexp_data.phytosanitary_products.transform.clean_metadata.metadata_parser",
             side_effect=mock_metadata_parser,
         ) as mock_parser,
         patch(
-            "manexp_web_lists.phytosanitary_products.transform.clean_metadata.translate",
+            "manexp_data.phytosanitary_products.transform.clean_metadata.translate",
             return_value="Translated English text",
         ) as mock_translate,
     ):

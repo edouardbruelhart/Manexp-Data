@@ -1,6 +1,6 @@
 from unittest.mock import MagicMock, patch
 
-from manexp_web_lists.postgres_helpers.apply_schema import apply_schema
+from manexp_data.postgres_helpers.apply_schema import apply_schema
 
 
 def test_apply_schema(tmp_path):
@@ -11,7 +11,7 @@ def test_apply_schema(tmp_path):
     mock_conn = MagicMock()
 
     with patch(
-        "manexp_web_lists.postgres_helpers.apply_schema.psycopg_connection",
+        "manexp_data.postgres_helpers.apply_schema.psycopg_connection",
     ) as mock_connect:
         mock_connect.return_value.__enter__.return_value = mock_conn
 

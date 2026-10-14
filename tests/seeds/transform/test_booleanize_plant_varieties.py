@@ -2,8 +2,8 @@ import polars as pl
 import pytest
 from polars.testing import assert_frame_equal
 
-from manexp_web_lists.exceptions import InvalidPseudoBoolError
-from manexp_web_lists.seeds.transform.booleanize_plant_varieties import (
+from manexp_data.exceptions import InvalidPseudoBoolError
+from manexp_data.seeds.transform.booleanize_plant_varieties import (
     booleanize_plant_varieties,
     convert_pseudo_bool_to_bool,
 )

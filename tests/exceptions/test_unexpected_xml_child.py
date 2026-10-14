@@ -1,4 +1,4 @@
-from manexp_web_lists.exceptions import UnexpectedXMLChildError
+from manexp_data.exceptions import UnexpectedXMLChildError
 
 
 def test_unexpected_xml_child_error() -> None:

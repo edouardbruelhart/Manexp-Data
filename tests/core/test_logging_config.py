@@ -1,6 +1,6 @@
 import logging
 
-from manexp_web_lists.core.logging_config import SectionAwareFormatter, configure_logging, log_section, log_sub_section
+from manexp_data.core.logging_config import SectionAwareFormatter, configure_logging, log_section, log_sub_section
 
 
 def test_section_aware_formatter_normal_log():

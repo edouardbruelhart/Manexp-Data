@@ -1,4 +1,4 @@
-from manexp_web_lists.exceptions import SeparatorError
+from manexp_data.exceptions import SeparatorError
 
 
 def test_invalid_chemical_error() -> None:

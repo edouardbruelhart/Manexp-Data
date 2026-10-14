@@ -7,7 +7,7 @@ from ruamel.yaml import YAML
 
 # ---------------- CONFIG ----------------
 ROOT_DIR = "."
-CODE_DIR = "manexp_web_lists"
+CODE_DIR = "manexp_data"
 DOC_DIR = "docs"
 MKDOCS_FILE = "mkdocs.yml"
 EXCLUSION_LIST = ["test.py"]

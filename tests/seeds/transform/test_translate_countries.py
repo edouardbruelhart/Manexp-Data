@@ -1,7 +1,7 @@
 import polars as pl
 from polars.testing import assert_frame_equal
 
-from manexp_web_lists.seeds.transform.translate_countries import translate_countries
+from manexp_data.seeds.transform.translate_countries import translate_countries
 
 
 def test_translate_countries() -> None:

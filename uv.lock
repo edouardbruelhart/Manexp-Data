@@ -1079,7 +1079,7 @@ wheels = [
 ]
 
 [[package]]
-name = "manexp-web-lists"
+name = "manexp-data"
 version = "0.0.1"
 source = { editable = "." }
 dependencies = [

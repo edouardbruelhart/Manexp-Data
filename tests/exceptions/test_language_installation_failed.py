@@ -1,4 +1,4 @@
-from manexp_web_lists.exceptions import LanguageInstallationFailedError
+from manexp_data.exceptions import LanguageInstallationFailedError
 
 
 def test_language_installation_failed_error() -> None:

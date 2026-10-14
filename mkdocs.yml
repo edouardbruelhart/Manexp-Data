@@ -1,7 +1,7 @@
-site_name: Manexp Web Lists Documentation
+site_name: Manexp Data Documentation
 site_author: Edouard Brülhart
 
-repo_name: edouardbruelhart/Manexp-Web-Lists
+repo_name: edouardbruelhart/Manexp-Data
 copyright: Maintained by <a
   href="https://github.com/edouardbruelhart">edouardbruelhart</a>.
 
@@ -10,7 +10,7 @@ plugins:
 - mkdocstrings:
     handlers:
       python:
-        paths: ["manexp_web_lists"]
+        paths: ["manexp_data"]
         import:
         - https://raw.githubusercontent.com/pyapp-kit/griffe-fieldz/main/README.md
         options:
@@ -72,101 +72,11 @@ theme:
   icon:
     repo: fontawesome/brands/github
 
-nav:
-- Run: manexp_web_lists/run.md
-- Clients:
-  - Gbif client: manexp_web_lists/clients/gbif_client.md
-  - Translation client: manexp_web_lists/clients/translation_client.md
-- Core:
-  - Logging config: manexp_web_lists/core/logging_config.md
-  - Mailer: manexp_web_lists/core/mailer.md
-  - Parsers: manexp_web_lists/core/parsers.md
-  - Strict model: manexp_web_lists/core/strict_model.md
-- Exceptions:
-  - Code mismatch: manexp_web_lists/exceptions/code_mismatch.md
-  - Invalid chemical: manexp_web_lists/exceptions/invalid_chemical.md
-  - Invalid pseudo boolean:
-      manexp_web_lists/exceptions/invalid_pseudo_boolean.md
-  - Invalid xml: manexp_web_lists/exceptions/invalid_xml.md
-  - Language installation failed:
-      manexp_web_lists/exceptions/language_installation_failed.md
-  - No pk detected: manexp_web_lists/exceptions/no_pk_detected.md
-  - Postgresql configuration failed:
-      manexp_web_lists/exceptions/postgresql_configuration_failed.md
-  - Separator error: manexp_web_lists/exceptions/separator_error.md
-  - Unexpected xml child: manexp_web_lists/exceptions/unexpected_xml_child.md
-  - Unexpected xml element:
-      manexp_web_lists/exceptions/unexpected_xml_element.md
-  - Unexpected xml language:
-      manexp_web_lists/exceptions/unexpected_xml_language.md
-  - Unresolved foreign key:
-      manexp_web_lists/exceptions/unresolved_foreign_key.md
-  - Unsupported os: manexp_web_lists/exceptions/unsupported_os.md
-  - Unsupported type: manexp_web_lists/exceptions/unsupported_type.md
-- Phytosanitary products:
-  - Get phytosanitary products:
-      manexp_web_lists/phytosanitary_products/get_phytosanitary_products.md
-  - Extract:
-    - Download phytosanitary products:
-        manexp_web_lists/phytosanitary_products/extract/download_phytosanitary_products.md
-    - Extract indications:
-        manexp_web_lists/phytosanitary_products/extract/extract_indications.md
-  - Load:
-    - Load phytosanitary products:
-        manexp_web_lists/phytosanitary_products/load/load_phytosanitary_products.md
-  - Transform:
-    - Clean indications:
-        manexp_web_lists/phytosanitary_products/transform/clean_indications.md
-    - Clean metadata:
-        manexp_web_lists/phytosanitary_products/transform/clean_metadata.md
-    - Clean products:
-        manexp_web_lists/phytosanitary_products/transform/clean_products.md
-    - Merge phyto:
-        manexp_web_lists/phytosanitary_products/transform/merge_phyto.md
-    - Parsers: manexp_web_lists/phytosanitary_products/transform/parsers.md
-- Postgres helpers:
-  - Apply schema: manexp_web_lists/postgres_helpers/apply_schema.md
-  - Database connection:
-      manexp_web_lists/postgres_helpers/database_connection.md
-  - Generate create tables:
-      manexp_web_lists/postgres_helpers/generate_create_tables.md
-  - Generate foreign key constraints:
-      manexp_web_lists/postgres_helpers/generate_foreign_key_constraints.md
-  - Generate schema: manexp_web_lists/postgres_helpers/generate_schema.md
-  - Synchronize: manexp_web_lists/postgres_helpers/synchronize.md
-- Seeds:
-  - Get seeds: manexp_web_lists/seeds/get_seeds.md
-  - Extract:
-    - Create countries: manexp_web_lists/seeds/extract/create_countries.md
-    - Create register subtypes:
-        manexp_web_lists/seeds/extract/create_register_subtypes.md
-    - Create register types:
-        manexp_web_lists/seeds/extract/create_register_types.md
-    - Download plant varieties:
-        manexp_web_lists/seeds/extract/download_plant_varieties.md
-    - Download taxonomy: manexp_web_lists/seeds/extract/download_taxonomy.md
-  - Load:
-    - Load seeds: manexp_web_lists/seeds/load/load_seeds.md
-  - Transform:
-    - Booleanize plant varieties:
-        manexp_web_lists/seeds/transform/booleanize_plant_varieties.md
-    - Clean plant varieties denominations:
-        manexp_web_lists/seeds/transform/clean_plant_varieties_denominations.md
-    - Clean taxonomy: manexp_web_lists/seeds/transform/clean_taxonomy.md
-    - Color taxonomy: manexp_web_lists/seeds/transform/color_taxonomy.md
-    - Filter plant varieties:
-        manexp_web_lists/seeds/transform/filter_plant_varieties.md
-    - Filter taxonomy: manexp_web_lists/seeds/transform/filter_taxonomy.md
-    - Iconize taxonomy: manexp_web_lists/seeds/transform/iconize_taxonomy.md
-    - Merge taxonomy: manexp_web_lists/seeds/transform/merge_taxonomy.md
-    - Replace plant varieties relations:
-        manexp_web_lists/seeds/transform/replace_plant_varieties_relations.md
-    - Translate countries:
-        manexp_web_lists/seeds/transform/translate_countries.md
+nav: []
 extra:
   social:
   - icon: fontawesome/brands/github
-    link: https://github.com/edouardbruelhart/Manexp-Web-Lists
+    link: https://github.com/edouardbruelhart/Manexp-Data
   - icon: fontawesome/solid/globe
     link: https://manexp.ch
 

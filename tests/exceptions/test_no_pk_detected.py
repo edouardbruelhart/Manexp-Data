@@ -1,4 +1,4 @@
-from manexp_web_lists.exceptions import NoPKDetectedError
+from manexp_data.exceptions import NoPKDetectedError
 
 
 def test_no_pk_detected_error() -> None:

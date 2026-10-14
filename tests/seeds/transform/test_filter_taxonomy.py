@@ -4,7 +4,7 @@ from unittest.mock import patch
 import polars as pl
 from polars.testing import assert_frame_equal
 
-from manexp_web_lists.seeds.transform.filter_taxonomy import filter_taxonomy
+from manexp_data.seeds.transform.filter_taxonomy import filter_taxonomy
 
 
 def test_filter_taxonomy() -> None:
@@ -17,7 +17,7 @@ def test_filter_taxonomy() -> None:
     })
 
     with patch(
-        "manexp_web_lists.seeds.transform.filter_taxonomy.pl.read_parquet",
+        "manexp_data.seeds.transform.filter_taxonomy.pl.read_parquet",
         return_value=fake_seeds,
     ):
         result = filter_taxonomy(taxonomy, Path("path/to/seed.parquet"))

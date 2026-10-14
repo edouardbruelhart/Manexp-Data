@@ -2,7 +2,7 @@ from unittest.mock import MagicMock, patch
 
 from psycopg import sql
 
-from manexp_web_lists.postgres_helpers.generate_schema import (
+from manexp_data.postgres_helpers.generate_schema import (
     generate_schema,
 )
 
@@ -32,15 +32,15 @@ def test_generate_schema(tmp_path):
 
     with (
         patch(
-            "manexp_web_lists.postgres_helpers.generate_schema.generate_create_tables",
+            "manexp_data.postgres_helpers.generate_schema.generate_create_tables",
             side_effect=lambda file: table_sql[file],
         ) as mock_create_tables,
         patch(
-            "manexp_web_lists.postgres_helpers.generate_schema.generate_foreign_key_constraints",
+            "manexp_data.postgres_helpers.generate_schema.generate_foreign_key_constraints",
             return_value=foreign_key_sql,
         ) as mock_foreign_keys,
         patch(
-            "manexp_web_lists.postgres_helpers.generate_schema.psycopg_connection",
+            "manexp_data.postgres_helpers.generate_schema.psycopg_connection",
         ) as mock_conn,
     ):
         generate_schema(parquet_path, output_file)

@@ -1,6 +1,6 @@
 import requests_mock
 
-from manexp_web_lists.clients.gbif_client import TaxonRank, parse_with_gbif
+from manexp_data.clients.gbif_client import TaxonRank, parse_with_gbif
 
 
 def test_parse_with_gbif_successful_parsing():

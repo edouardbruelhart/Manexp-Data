@@ -1,7 +1,7 @@
 import polars as pl
 from polars.testing import assert_frame_equal
 
-from manexp_web_lists.seeds.transform.iconize_taxonomy import iconize_taxonomy
+from manexp_data.seeds.transform.iconize_taxonomy import iconize_taxonomy
 
 
 def test_iconize_taxonomy() -> None:

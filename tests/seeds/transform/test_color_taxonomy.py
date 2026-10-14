@@ -1,7 +1,7 @@
 import polars as pl
 from polars.testing import assert_frame_equal
 
-from manexp_web_lists.seeds.transform.color_taxonomy import color_taxonomy, text_to_color
+from manexp_data.seeds.transform.color_taxonomy import color_taxonomy, text_to_color
 
 
 def test_text_to_color():

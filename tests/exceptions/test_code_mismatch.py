@@ -1,4 +1,4 @@
-from manexp_web_lists.exceptions import CodeMismatchError
+from manexp_data.exceptions import CodeMismatchError
 
 
 def test_code_mismatch_error() -> None:

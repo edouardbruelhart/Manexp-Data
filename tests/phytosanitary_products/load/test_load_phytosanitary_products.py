@@ -1,6 +1,6 @@
 from unittest.mock import patch
 
-from manexp_web_lists.phytosanitary_products.load.load_phytosanitary_products import load_phytosanitary_products
+from manexp_data.phytosanitary_products.load.load_phytosanitary_products import load_phytosanitary_products
 
 
 def test_load_phytosanitary_products(tmp_path):
@@ -9,14 +9,10 @@ def test_load_phytosanitary_products(tmp_path):
 
     with (
         patch(
-            "manexp_web_lists.phytosanitary_products.load.load_phytosanitary_products.generate_schema"
+            "manexp_data.phytosanitary_products.load.load_phytosanitary_products.generate_schema"
         ) as mock_generate_schema,
-        patch(
-            "manexp_web_lists.phytosanitary_products.load.load_phytosanitary_products.apply_schema"
-        ) as mock_apply_schema,
-        patch(
-            "manexp_web_lists.phytosanitary_products.load.load_phytosanitary_products.synchronize"
-        ) as mock_synchronize,
+        patch("manexp_data.phytosanitary_products.load.load_phytosanitary_products.apply_schema") as mock_apply_schema,
+        patch("manexp_data.phytosanitary_products.load.load_phytosanitary_products.synchronize") as mock_synchronize,
     ):
         load_phytosanitary_products(files_path)
 

@@ -1,6 +1,6 @@
 from pathlib import Path
 
-PACKAGE_NAME = "manexp_web_lists"
+PACKAGE_NAME = "manexp_data"
 TESTS_DIR = "tests"
 
 

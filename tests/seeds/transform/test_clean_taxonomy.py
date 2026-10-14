@@ -3,7 +3,7 @@ from unittest.mock import patch
 import polars as pl
 from polars.testing import assert_frame_equal
 
-from manexp_web_lists.seeds.transform.clean_taxonomy import clean_taxonomy
+from manexp_data.seeds.transform.clean_taxonomy import clean_taxonomy
 
 
 def test_clean_taxonomy():
@@ -12,7 +12,7 @@ def test_clean_taxonomy():
 
     fake_response = {"focal_name": "Taxon Name", "genus": "Genus", "rank": "SPECIES", "parsed": True}
 
-    with patch("manexp_web_lists.seeds.transform.clean_taxonomy.parse_with_gbif", return_value=fake_response):
+    with patch("manexp_data.seeds.transform.clean_taxonomy.parse_with_gbif", return_value=fake_response):
         # Call the clean_taxonomy function
         cleaned_taxonomy = clean_taxonomy(taxonomy)
 

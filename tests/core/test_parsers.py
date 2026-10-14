@@ -1,4 +1,4 @@
-from manexp_web_lists.core.parsers import parse_strings_to_list
+from manexp_data.core.parsers import parse_strings_to_list
 
 
 def test_parse_strings_to_list_success():

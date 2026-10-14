@@ -1,6 +1,6 @@
 from unittest.mock import MagicMock, patch
 
-from manexp_web_lists.seeds.extract.download_taxonomy import (
+from manexp_data.seeds.extract.download_taxonomy import (
     COLUMNS,
     FILES,
     URLS,
@@ -10,8 +10,8 @@ from manexp_web_lists.seeds.extract.download_taxonomy import (
 
 def test_download_taxonomy(tmp_path) -> None:
     with (
-        patch("manexp_web_lists.seeds.extract.download_taxonomy.sync_playwright") as mock_sync,
-        patch("manexp_web_lists.seeds.extract.download_taxonomy.pl.DataFrame") as mock_dataframe,
+        patch("manexp_data.seeds.extract.download_taxonomy.sync_playwright") as mock_sync,
+        patch("manexp_data.seeds.extract.download_taxonomy.pl.DataFrame") as mock_dataframe,
     ):
         playwright = MagicMock()
         mock_sync.return_value.__enter__.return_value = playwright

@@ -4,7 +4,7 @@ from unittest.mock import patch
 import polars as pl
 from polars.testing import assert_frame_equal
 
-from manexp_web_lists.phytosanitary_products.transform.clean_indications import clean_indications
+from manexp_data.phytosanitary_products.transform.clean_indications import clean_indications
 
 
 def test_clean_indications(tmp_path: Path) -> None:
@@ -31,7 +31,7 @@ def test_clean_indications(tmp_path: Path) -> None:
     })
 
     with patch(
-        "manexp_web_lists.phytosanitary_products.transform.clean_indications.indications_parser",
+        "manexp_data.phytosanitary_products.transform.clean_indications.indications_parser",
         return_value=indications,
     ) as mock_parser:
         clean_indications(tmp_path)

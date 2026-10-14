@@ -2,14 +2,14 @@ from unittest.mock import patch
 
 import pytest
 
-from manexp_web_lists.clients.translation_client import translate
-from manexp_web_lists.exceptions import LanguageInstallationFailedError
+from manexp_data.clients.translation_client import translate
+from manexp_data.exceptions import LanguageInstallationFailedError
 
 
 def test_translate():
 
     with patch(
-        "manexp_web_lists.clients.translation_client.argostranslate.translate.translate", return_value="Hello world"
+        "manexp_data.clients.translation_client.argostranslate.translate.translate", return_value="Hello world"
     ) as mock_translate:
         result = translate("Bonjour le monde", "fr", "en")
 
@@ -25,14 +25,14 @@ def test_translate():
 def test_translate_installs_language_package_when_missing():
     with (
         patch(
-            "manexp_web_lists.clients.translation_client.argostranslate.translate.translate",
+            "manexp_data.clients.translation_client.argostranslate.translate.translate",
             side_effect=[
                 AttributeError("'NoneType' object has no attribute 'translate'"),
                 "Hello world",
             ],
         ) as mock_translate,
         patch(
-            "manexp_web_lists.clients.translation_client.argostranslate.package.install_package_for_language_pair",
+            "manexp_data.clients.translation_client.argostranslate.package.install_package_for_language_pair",
             return_value=True,
         ) as mock_install,
     ):
@@ -54,7 +54,7 @@ def test_translate_reraises_unexpected_attribute_error():
 
     with (
         patch(
-            "manexp_web_lists.clients.translation_client.argostranslate.translate.translate",
+            "manexp_data.clients.translation_client.argostranslate.translate.translate",
             side_effect=error,
         ) as mock_translate,
         pytest.raises(AttributeError, match="some other attribute error"),
@@ -71,11 +71,11 @@ def test_translate_reraises_unexpected_attribute_error():
 def test_translate_raises_when_language_package_installation_fails():
     with (
         patch(
-            "manexp_web_lists.clients.translation_client.argostranslate.translate.translate",
+            "manexp_data.clients.translation_client.argostranslate.translate.translate",
             side_effect=AttributeError("'NoneType' object has no attribute 'translate'"),
         ) as mock_translate,
         patch(
-            "manexp_web_lists.clients.translation_client.argostranslate.package.install_package_for_language_pair",
+            "manexp_data.clients.translation_client.argostranslate.package.install_package_for_language_pair",
             return_value=False,
         ) as mock_install,
         pytest.raises(

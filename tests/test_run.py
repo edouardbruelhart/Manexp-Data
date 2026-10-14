@@ -1,16 +1,16 @@
 from unittest.mock import patch
 
-from manexp_web_lists.run import run
+from manexp_data.run import run
 
 
 # Just to make codecov happy
 def test_run_calls_fetches_and_mailer():
     with (
-        patch("manexp_web_lists.run.get_seeds") as mock_seeds,
-        patch("manexp_web_lists.run.get_phytosanitary_products") as mock_sanitary,
-        patch("manexp_web_lists.run.mailer.send_email") as mock_mail,
-        patch("manexp_web_lists.run.configure_logging") as mock_log,
-        patch("manexp_web_lists.run.log_section") as mock_section,
+        patch("manexp_data.run.get_seeds") as mock_seeds,
+        patch("manexp_data.run.get_phytosanitary_products") as mock_sanitary,
+        patch("manexp_data.run.mailer.send_email") as mock_mail,
+        patch("manexp_data.run.configure_logging") as mock_log,
+        patch("manexp_data.run.log_section") as mock_section,
     ):
 
         class DummyLog:
@@ -31,8 +31,8 @@ def test_run_calls_fetches_and_mailer():
 
 def test_run_exception_sends_error_email():
     with (
-        patch("manexp_web_lists.run.get_seeds", side_effect=RuntimeError),
-        patch("manexp_web_lists.core.mailer.Mailer.send_email") as mock_send,
+        patch("manexp_data.run.get_seeds", side_effect=RuntimeError),
+        patch("manexp_data.core.mailer.Mailer.send_email") as mock_send,
     ):
         run()
 

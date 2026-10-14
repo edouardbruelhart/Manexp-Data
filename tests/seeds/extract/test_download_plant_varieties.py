@@ -1,6 +1,6 @@
 from unittest.mock import MagicMock, patch
 
-from manexp_web_lists.seeds.extract.download_plant_varieties import (
+from manexp_data.seeds.extract.download_plant_varieties import (
     download_plant_varieties,
 )
 
@@ -9,9 +9,9 @@ def test_download_plant_varieties(tmp_path) -> None:
     output_path = tmp_path / "plant_varieties.csv"
 
     with (
-        patch("manexp_web_lists.seeds.extract.download_plant_varieties.sync_playwright") as mock_sync,
-        patch("manexp_web_lists.seeds.extract.download_plant_varieties.expect") as mock_expect,
-        patch("manexp_web_lists.seeds.extract.download_plant_varieties.pl.read_excel") as mock_read_excel,
+        patch("manexp_data.seeds.extract.download_plant_varieties.sync_playwright") as mock_sync,
+        patch("manexp_data.seeds.extract.download_plant_varieties.expect") as mock_expect,
+        patch("manexp_data.seeds.extract.download_plant_varieties.pl.read_excel") as mock_read_excel,
     ):
         playwright = MagicMock()
         browser = MagicMock()

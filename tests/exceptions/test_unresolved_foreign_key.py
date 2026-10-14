@@ -1,4 +1,4 @@
-from manexp_web_lists.exceptions import UnresolvedForeignKeyError
+from manexp_data.exceptions import UnresolvedForeignKeyError
 
 
 def test_unresolved_foreign_key_error() -> None:

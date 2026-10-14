@@ -1,6 +1,6 @@
 from unittest.mock import patch
 
-from manexp_web_lists.postgres_helpers.database_connection import psycopg_connection
+from manexp_data.postgres_helpers.database_connection import psycopg_connection
 
 
 def test_psycopg_connection(monkeypatch):
@@ -9,7 +9,7 @@ def test_psycopg_connection(monkeypatch):
     monkeypatch.setenv("POSTGRES_PIPELINE_PASSWORD", "test-password")
 
     with (
-        patch("manexp_web_lists.postgres_helpers.database_connection.connect") as mock_connect,
+        patch("manexp_data.postgres_helpers.database_connection.connect") as mock_connect,
     ):
         psycopg_connection()
 

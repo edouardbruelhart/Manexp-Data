@@ -1,4 +1,4 @@
-from manexp_web_lists.exceptions import InvalidPseudoBoolError
+from manexp_data.exceptions import InvalidPseudoBoolError
 
 
 def test_invalid_chemical_error() -> None:

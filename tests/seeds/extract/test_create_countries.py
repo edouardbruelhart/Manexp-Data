@@ -1,6 +1,6 @@
 import polars as pl
 
-from manexp_web_lists.seeds.extract.create_countries import (
+from manexp_data.seeds.extract.create_countries import (
     create_countries,
 )
 

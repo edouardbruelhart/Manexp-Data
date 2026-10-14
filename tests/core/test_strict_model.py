@@ -1,7 +1,7 @@
 import pytest
 from pydantic import ValidationError
 
-from manexp_web_lists.core.strict_model import StrictModel
+from manexp_data.core.strict_model import StrictModel
 
 
 # Create a concrete subclass for testing

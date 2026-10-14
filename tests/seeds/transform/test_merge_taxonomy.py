@@ -3,7 +3,7 @@ from unittest.mock import patch
 
 import polars as pl
 
-from manexp_web_lists.seeds.transform.merge_taxonomy import merge_taxonomy
+from manexp_data.seeds.transform.merge_taxonomy import merge_taxonomy
 
 
 def test_merge_taxonomy(tmp_path: Path) -> None:
@@ -26,7 +26,7 @@ A03,Cherry
 """
     )
     with (
-        patch("manexp_web_lists.seeds.transform.merge_taxonomy.FILES", new=[first_csv, second_csv]),
+        patch("manexp_data.seeds.transform.merge_taxonomy.FILES", new=[first_csv, second_csv]),
     ):
         merge_taxonomy(tmp_path, output_file)
 

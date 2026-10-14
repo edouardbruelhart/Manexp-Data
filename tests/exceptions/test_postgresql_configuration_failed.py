@@ -1,4 +1,4 @@
-from manexp_web_lists.exceptions import PostgresqlConfigurationFailedError
+from manexp_data.exceptions import PostgresqlConfigurationFailedError
 
 
 def test_postgresql_configuration_failed_error() -> None:

@@ -38,7 +38,7 @@ services:
   pipeline:
     build:
       context: .
-      dockerfile: manexp_web_lists/Dockerfile
+      dockerfile: Dockerfile
 
     restart: no
 

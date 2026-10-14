@@ -1,4 +1,4 @@
-from manexp_web_lists.exceptions import UnsupportedTypeError
+from manexp_data.exceptions import UnsupportedTypeError
 
 
 def test_unsupported_type_error() -> None:

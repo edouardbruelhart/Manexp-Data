@@ -1,4 +1,4 @@
-from manexp_web_lists.exceptions import InvalidXMLError
+from manexp_data.exceptions import InvalidXMLError
 
 
 def test_invalid_xml_error() -> None:

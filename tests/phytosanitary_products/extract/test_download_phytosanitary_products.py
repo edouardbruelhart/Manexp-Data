@@ -8,8 +8,8 @@ import pytest
 import requests
 from defusedxml.ElementTree import parse
 
-from manexp_web_lists.exceptions import InvalidXMLError
-from manexp_web_lists.phytosanitary_products.extract.download_phytosanitary_products import (
+from manexp_data.exceptions import InvalidXMLError
+from manexp_data.phytosanitary_products.extract.download_phytosanitary_products import (
     download_phytosanitary_products,
     download_zip,
     extract_zip,
@@ -30,7 +30,7 @@ def test_download_zip_success():
     session_factory.__exit__.return_value = None
 
     with patch(
-        "manexp_web_lists.phytosanitary_products.extract.download_phytosanitary_products.requests.Session",
+        "manexp_data.phytosanitary_products.extract.download_phytosanitary_products.requests.Session",
         return_value=session_factory,
     ):
         result = download_zip("https://example.com/archive.zip")
@@ -54,7 +54,7 @@ def test_download_zip_http_error():
 
     with (
         patch(
-            "manexp_web_lists.phytosanitary_products.extract.download_phytosanitary_products.requests.Session",
+            "manexp_data.phytosanitary_products.extract.download_phytosanitary_products.requests.Session",
             return_value=session_factory,
         ),
         pytest.raises(requests.HTTPError),
@@ -177,11 +177,11 @@ def test_download_phytosanitary_products_success(
 
     with (
         patch(
-            "manexp_web_lists.phytosanitary_products.extract.download_phytosanitary_products.download_zip",
+            "manexp_data.phytosanitary_products.extract.download_phytosanitary_products.download_zip",
             return_value=io.BytesIO(b"dummy zip"),
         ),
         patch(
-            "manexp_web_lists.phytosanitary_products.extract.download_phytosanitary_products.extract_zip",
+            "manexp_data.phytosanitary_products.extract.download_phytosanitary_products.extract_zip",
             return_value={
                 "PublicationData.xml": xml_buffer,
             },
@@ -307,11 +307,11 @@ def test_download_phytosanitary_products_does_not_modify_input(
 
     with (
         patch(
-            "manexp_web_lists.phytosanitary_products.extract.download_phytosanitary_products.download_zip",
+            "manexp_data.phytosanitary_products.extract.download_phytosanitary_products.download_zip",
             return_value=io.BytesIO(b"dummy zip"),
         ),
         patch(
-            "manexp_web_lists.phytosanitary_products.extract.download_phytosanitary_products.extract_zip",
+            "manexp_data.phytosanitary_products.extract.download_phytosanitary_products.extract_zip",
             return_value={
                 "PublicationData.xml": xml_buffer,
             },
@@ -357,11 +357,11 @@ def test_download_phytosanitary_products_metadata(
 
     with (
         patch(
-            "manexp_web_lists.phytosanitary_products.extract.download_phytosanitary_products.download_zip",
+            "manexp_data.phytosanitary_products.extract.download_phytosanitary_products.download_zip",
             return_value=io.BytesIO(b"dummy zip"),
         ),
         patch(
-            "manexp_web_lists.phytosanitary_products.extract.download_phytosanitary_products.extract_zip",
+            "manexp_data.phytosanitary_products.extract.download_phytosanitary_products.extract_zip",
             return_value={
                 "PublicationData.xml": xml_buffer,
             },
@@ -407,17 +407,17 @@ def test_download_phytosanitary_products_write_error(
 
     with (
         patch(
-            "manexp_web_lists.phytosanitary_products.extract.download_phytosanitary_products.download_zip",
+            "manexp_data.phytosanitary_products.extract.download_phytosanitary_products.download_zip",
             return_value=io.BytesIO(b"dummy zip"),
         ),
         patch(
-            "manexp_web_lists.phytosanitary_products.extract.download_phytosanitary_products.extract_zip",
+            "manexp_data.phytosanitary_products.extract.download_phytosanitary_products.extract_zip",
             return_value={
                 "PublicationData.xml": xml_buffer,
             },
         ),
         patch(
-            "manexp_web_lists.phytosanitary_products.extract.download_phytosanitary_products.ElementTree.write",
+            "manexp_data.phytosanitary_products.extract.download_phytosanitary_products.ElementTree.write",
             side_effect=IndexError,
         ),
         pytest.raises(InvalidXMLError),

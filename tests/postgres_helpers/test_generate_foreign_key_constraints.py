@@ -3,8 +3,8 @@ import pyarrow.parquet as pq
 import pytest
 from psycopg import sql
 
-from manexp_web_lists.exceptions import UnresolvedForeignKeyError
-from manexp_web_lists.postgres_helpers.generate_foreign_key_constraints import (
+from manexp_data.exceptions import UnresolvedForeignKeyError
+from manexp_data.postgres_helpers.generate_foreign_key_constraints import (
     foreign_key_target,
     generate_foreign_key_constraints,
 )

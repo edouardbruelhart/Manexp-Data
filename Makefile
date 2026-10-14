@@ -13,9 +13,9 @@ check: ## Run code quality tools.
 	@echo "🚀 Static type checking: Running mypy"
 	@uv run mypy
 	@echo "🚀 Documentation check: Running pydoclint"
-	@uv run pydoclint manexp_web_lists
+	@uv run pydoclint manexp_data
 	@echo "🚀 Documentation coverage check: Running interrogate"
-	@uv run interrogate manexp_web_lists
+	@uv run interrogate manexp_data
 	@echo "🚀 Checking for obsolete dependencies: Running deptry"
 	@uv run deptry .
 
