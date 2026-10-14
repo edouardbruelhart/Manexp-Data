@@ -42,6 +42,7 @@ Documentation = "https://edouardbruelhart.github.io/Manexp-Data/"
 
 [dependency-groups]
 dev = [
+    "torch",
     "pytest>=9.0.2",
     "requests-mock>=1.12.1",
     "pre-commit>=4.5.1",
@@ -169,3 +170,12 @@ skip_empty = true
 [tool.coverage.run]
 branch = true
 source = ["manexp_data"]
+
+
+[[tool.uv.index]]
+name = "pytorch-cpu"
+url = "https://download.pytorch.org/whl/cpu"
+explicit = true
+
+[tool.uv.sources]
+torch = { index = "pytorch-cpu" }
