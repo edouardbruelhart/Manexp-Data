@@ -2810,7 +2810,8 @@ vim<span class="w"> </span>.env
 </code></pre></div>
 <h3 id="3-run-the-ingestion-pipeline">3. Run the ingestion pipeline</h3>
 <p>Run this command in the root directory of the repository when you want to update the database:</p>
-<div class="language-bash highlight"><pre><span></span><code>docker<span class="w"> </span>compose<span class="w"> </span>run<span class="w"> </span>--rm<span class="w"> </span>--build<span class="w"> </span>pipeline
+<div class="language-bash highlight"><pre><span></span><code>docker<span class="w"> </span>pull<span class="w"> </span>ghcr.io/edouardbruelhart/manexp-data:v1.0.2<span class="w"> </span><span class="c1"># Only once. Change version code if needed</span>
+docker<span class="w"> </span>compose<span class="w"> </span>run<span class="w"> </span>--rm<span class="w"> </span>--build<span class="w"> </span>pipeline
 </code></pre></div>
 <h3 id="4-access-database">4. Access database</h3>
 <p>You can access the database using any PostgreSQL client or tool of your choice. The docker-compose.yaml file is configured to expose database only on your own host (127.0.0.1:<POSTGRES_PORT>). Feel free to modify the configuration to connect to a different host or port if needed.</p>
