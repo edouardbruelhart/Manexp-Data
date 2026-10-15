@@ -75,7 +75,7 @@ Run this command once in the root directory of the repository:
 Run this command in the root directory of the repository when you want to update the database:
 
 ```bash
-docker pull ghcr.io/edouardbruelhart/manexp-data:v1.0.1 # Only once. Change version code if needed
+docker pull ghcr.io/edouardbruelhart/manexp-data:v1.0.2 # Only once. Change version code if needed
 docker compose run --rm --build pipeline
 ```
 
